@@ -3,7 +3,7 @@ const Profile = ({
   tag,
   location,
   image,
-  stat: { followers, views, likes },
+  stats: { followers, views, likes },
 }) => {
   return (
     <div>
