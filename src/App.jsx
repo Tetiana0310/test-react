@@ -18,10 +18,16 @@ export default function App() {
 
   const { good, neutral, bad } = feedback;
   const totalFeedback = good + neutral + bad;
-
+  const resetFeedback = () => {
+    setFeedback({
+      good: 0,
+      neutral: 0,
+      bad: 0,
+    });
+  };
   return (
     <>
-      <Options updateFeedback={updateFeedback}></Options>
+      <Options updateFeedback={updateFeedback} reset={resetFeedback}></Options>
 
       <Feedback feedback={feedback} total={totalFeedback}></Feedback>
     </>
