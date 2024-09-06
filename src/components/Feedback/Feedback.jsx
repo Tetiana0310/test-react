@@ -1,12 +1,10 @@
-import { useState } from "react";
-
-export default function Feedback({ good, neutral, bad }) {
+export default function Feedback({ feedback: { good, neutral, bad }, total }) {
   return (
     <ul>
-      <li>Good:</li>
-      <li>Neutral:</li>
-      <li>Bad:</li>
-      <li>Total:</li>
+      <li>Good: {good}</li>
+      <li>Neutral: {neutral}</li>
+      <li>Bad: {bad}</li>
+      <li>Total: {total}</li>
       <li>Positive:</li>
     </ul>
   );

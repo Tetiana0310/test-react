@@ -9,13 +9,21 @@ export default function App() {
     neutral: 0,
     bad: 0,
   });
-  // const updateFeedback = (feedbackType) => {
+  const updateFeedback = (feedbackType) => {
+    setFeedback((prev) => ({
+      ...prev,
+      [feedbackType]: prev[feedbackType] + 1,
+    }));
+  };
+
+  const { good, neutral, bad } = feedback;
+  const totalFeedback = good + neutral + bad;
 
   return (
     <>
-      <Options></Options>
+      <Options updateFeedback={updateFeedback}></Options>
 
-      <Feedback></Feedback>
+      <Feedback feedback={feedback} total={totalFeedback}></Feedback>
     </>
   );
 }
